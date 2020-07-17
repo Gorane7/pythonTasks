@@ -1,5 +1,5 @@
-# Ülesanne
-Tegemist on OOP ülesandega, kus 70% punktidest tuleb automaattestidest ning 30% tuleb kaitsmisel õppejõu poolt.
+# Ülesanne: osa 1 (10p)
+Esimeses osas on tegemist OOP ülesandega, kus 70% punktidest tuleb automaattestidest ning 30% tuleb kaitsmisel õppejõu poolt.  
 Oled sõpradega viimastel aastatel mänginud palju lauamänge ning üks neist tuleb sinu juurde, kuna ta on kogu selle aja jooksul peale igat mängu tulemuse kirja pannud ning tahab, et sina koostaksid Pythoni programmi, mis neid andmeid analüüsib ning parima mängija välja selgitab.
 
 ## Tulemuste formaat
@@ -20,23 +20,23 @@ Mängijad võib mängul olla ükskõik kui palju ning **mängijate nimed** on ku
 **winner** korral on see kujul **mängija2**, kus on kirjas vaid võitja nimi
 
 ## Klass: Statistics
-**Statistics** on peaming klass, mis haldab kogu tegevust.\
+**Statistics** on peamine klass, mis haldab kogu tegevust.\
 *Konstruktor*: \__init__(self, **filename**), kus **filename** on fail, kust tuleb lugeda tulemusi.
 ### Nõutud funktsionaalsus
-#### Kokkuvõtvad andmed (4.5p)
+#### Kokkuvõtvad andmed (3p)
 * **get_player_names()** - tagastab listi mängijate nimedest (nimede järjekord pole oluline)
 * **get_game_names()** - tagastab listi mängude nimedest (nimede järjekord pole oluline)
 * **get_games_played_amount()** - tagastab *int*-i, mis kirjeldab, mitu mängu on mängitud
 * **get_games_played_of_type(result_type)** - kus **result_type** on string võimalike väärtustega **points**, **places** või **winner**, funktsioon peab tagastama, mitu seda tüüpi mängu on mängitud
 * **get_games_played_of_name(name)** - tagastab *int*-i, mis kirjeldab, mitu mängu nimega **name** on mängitud
 
-#### Andmed mängija kohta (3p)
+#### Andmed mängija kohta (2p)
 Selle osa jaoks oleks ilmselt mõistlik luua Player klass.
 * **get_games_amount_played_by(player_name)** - tagastab *int*-i, mis kirjeldab, mitu mängu on mängija nimega **player_name** mänginud
 * **get_favourite_game(player_name)** - tagastab mängu (*string*), mida mängija nimega **player_name** on enim mänginud, viigi korral tagastada neist suvaline
 * **get_amount_of_games_won(player_name)** - tagastab *int*-i, mis kirjeldab, mitu mängu mängija nimega **player_name** on võitnud
 
-#### Andmed mängu kohta (3p)
+#### Andmed mängu kohta (2p)
 Selle osa jaoks oleks ilmselt mõistlik luua Game klass.
 * **get_amount_of_players_most_often_played_with(game_name)** - tagastab *int*-i, mis kirjeldab, mitme mängijaga mängu nimega **game_name** enim mängitud on, viigi korral tagastada neist suvaline
 * **get_most_frequent_winner(game_name)** - tagastab mängija (*string*), kelle võiduprotsent mängus nimega **game_name** on suurim, viigi korral tagastada neist suvaline (seda funktsiooni võidakse kutsuda ükskõik, mis tüüpi mängu korral)
@@ -45,7 +45,7 @@ Selle osa jaoks oleks ilmselt mõistlik luua Game klass.
 * **get_player_with_most_amount_of_losses(game_name)** - tagastab mängija (*string*), kellel on mängus nimega **game_name** enim kaotusi (viimasele kohale jäämisi), viigi korral tagastada neist suvaline (seda funktsiooni kutsutakse vaid **points** või **places** mängu korral)
 * **get_record_holder(game_name)** - tagastab mängija (*string*), kes on mängus nimega **game_name** saanud enim punkte (ühe mängu jooksul), viigi korral tagastada see, kes selle tulemuse esimesena saavutas (seda funktsiooni kutsutakse vaid **points** mängu korral)
 
-#### Parima mängija leidmine (4.5p)
+#### Parima mängija leidmine (3p)
 Selle osa kohta automaattestid puuduvad, punktid määrab kaitsmisel õppejõud
 * **get_best_player()** - tagastab parima mängija (*string*). See kuidas määratakse parim mängija on suuresti tudengi enda otsustada, kuid kindlasti tuleb arvesse võtta tulemusi igat tüüpi mängudest
 * **get_best_player_of(game_name)** - tagastab mängu **game_name** parima mängija. Jällegi, kuidas täpselt otsustatakse, kuidas määrata parim mängija on tudengi otsustada, kuid mõned piirangud sellel siiski on.
@@ -56,3 +56,12 @@ Selle osa kohta automaattestid puuduvad, punktid määrab kaitsmisel õppejõud
  * **places** - iga koht annab n - x punkti, kus n on mängijate arv, ning x on koht, ning võitja on enim punkte saanud mängija
  * **points** - punktid liidetakse kokku ning enim punkte saanud mängija võidab
  * Iga kirjeldatud süsteemi kohta saab teha ka analoogse, kuid 'protsentuaalse' süsteemi, kus tulemus on jagatud läbi sellega, mitu korda antud mängija mängis, lahendused, mis selle lisaga piirduvad ei anna samuti maksimumpunkte
+
+# Ülesanne: osa 2 (5p)
+Teises osas on vaja teha programm, mis suhtleb BoardGameGeek'i API-ga ning lahendada üks algoritmiline ülesanne.  
+https://boardgamegeek.com/wiki/page/BGG_XML_API2  
+Sinu sõber ütleb sulle, et ta tahab väga mängida ühte kindlat mängu, kuid ta ei tea, millised tema sõpradest seda mängu omavad. Õnneks teab ta, et igal sõbral, kes mänge omab on kasutaja veebisaidil BoardGameGeek ning ta teab ka kõiki neid kasutajanimesid. Kahjuks ta ei tea, milline kasutajanimi käib kokku millise sõbraga, kuid ta teab, et iga kord, kui mingit mängu mängiti, oli mängijate hulgas ka selle mängu omanik.  
+Kasutades eelmainitud API-t pead sa leidma kõik inimesed, kes omavad mängu, mida su sõber tahtis mängida.  
+* **get_players_who_own(game_name, usernames)** - tagastab listi sõprade nimedest (nii nagu nad on kirjas mängu tulemuste failis), kelle BoardGameGeek-i kollektsioonis on mäng nimega **game_name**
+
+**usernames** on list sõprade BoardGameGeek-i kasutajanimedest.
